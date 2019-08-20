@@ -10,15 +10,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Indicates this as a configuration class
- */
+
 @Configuration
 public class RabbitMqConfig {
 
-    /**
-     * @Value injects values into fields
-     */
+
     @Value("${jsa.rabbitmq.queue}")
     private String queueName;
 
@@ -28,9 +24,7 @@ public class RabbitMqConfig {
     @Value("${jsa.rabbitmq.routingkey}")
     private String routingKey;
 
-    /**
-     * @Bean Creates required objects
-     */
+
     @Bean
     public Queue queue() {
         return new Queue(queueName, false);
